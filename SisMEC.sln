@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SisMEC", "SisMEC\SisMEC.csproj", "{64AED4D3-85B5-497C-BC7E-EC6D0D216554}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64AED4D3-85B5-497C-BC7E-EC6D0D216554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64AED4D3-85B5-497C-BC7E-EC6D0D216554}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64AED4D3-85B5-497C-BC7E-EC6D0D216554}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64AED4D3-85B5-497C-BC7E-EC6D0D216554}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC5C9658-010C-4563-9453-26FA4A86BC21}
+	EndGlobalSection
+EndGlobal

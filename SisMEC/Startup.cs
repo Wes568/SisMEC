@@ -1,13 +1,18 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SisMEC.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SisMEC.Models;
+using SisMEC.Repositories.Interfaces;
+using SisMEC.Repositories;
 
 namespace SisMEC
 {
@@ -23,9 +28,19 @@ namespace SisMEC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<AppDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+            services.AddTransient<IServicoRepository, ServicoRepository>();
+            services.AddTransient<IProdutoRepository, ProdutoRepository>();
+            services.AddTransient<IClienteRepository, ClienteRepository>();
+            services.AddTransient<ICarroRepository, CarroRepository>();
+            services.AddTransient<ICaixaRepository, CaixaRepository>();
+
             services.AddControllersWithViews();
         }
-
+        
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

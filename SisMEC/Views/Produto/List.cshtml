@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SisMEC.Models.Produto>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdutoNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdutoQuantidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdutoValor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdutoDataValidade)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdutoNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdutoQuantidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdutoValor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdutoDataValidade)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ProdutoId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ProdutoId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProdutoId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

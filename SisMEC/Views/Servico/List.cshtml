@@ -1,0 +1,77 @@
+﻿@model IEnumerable<SisMEC.Models.Servico>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicoDataEntrada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicoDataSaida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicoDescricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicoValor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicoPecas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicoObs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicoCompleto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServicoDataEntrada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServicoDataSaida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServicoDescricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServicoValor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServicoPecas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServicoObs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServicoCompleto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.ClienteCPF)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ServicoId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ServicoId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ServicoId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

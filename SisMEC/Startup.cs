@@ -13,6 +13,8 @@ using System.Threading.Tasks;
 using SisMEC.Models;
 using SisMEC.Repositories.Interfaces;
 using SisMEC.Repositories;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Http;
 
 namespace SisMEC
 {
@@ -31,12 +33,21 @@ namespace SisMEC
             services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddEntityFrameworkStores<AppDbContext>()
+            .AddDefaultTokenProviders();
+
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
             services.AddTransient<IServicoRepository, ServicoRepository>();
             services.AddTransient<IProdutoRepository, ProdutoRepository>();
             services.AddTransient<IClienteRepository, ClienteRepository>();
             services.AddTransient<ICarroRepository, CarroRepository>();
             services.AddTransient<ICaixaRepository, CaixaRepository>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddMemoryCache();
+            services.AddSession();
 
             services.AddControllersWithViews();
         }
@@ -59,7 +70,11 @@ namespace SisMEC
 
             app.UseRouting();
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

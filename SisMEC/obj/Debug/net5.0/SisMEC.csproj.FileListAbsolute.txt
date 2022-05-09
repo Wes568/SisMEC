@@ -149,3 +149,11 @@ C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\obj\Debug\net5.0\Razor\Views\P
 C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\obj\Debug\net5.0\Razor\Views\Cliente\List.cshtml.g.cs
 C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\obj\Debug\net5.0\Razor\Views\Caixa\List.cshtml.g.cs
 C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\obj\Debug\net5.0\Razor\Views\Carro\List.cshtml.g.cs
+C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs

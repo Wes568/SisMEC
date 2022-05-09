@@ -26,8 +26,15 @@ using SisMEC.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\Views\_ViewImports.cshtml"
+using SisMEC.ViewModel;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c88d5d5e975180dc5bee5064d696616bad49a66f", @"/Views/Caixa/List.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"481d5fe23717a1525e0e223a156e8c02a0518a10", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b36b7d4a3c1021a87736470a10ece88e3c9c49a3", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Caixa_List : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<SisMEC.Models.Caixa>>
     #nullable disable
@@ -70,7 +77,7 @@ using SisMEC.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h1>List</h1>\r\n\r\n<p>\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c88d5d5e975180dc5bee5064d696616bad49a66f4573", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c88d5d5e975180dc5bee5064d696616bad49a66f4754", async() => {
                 WriteLiteral("Create New");
             }
             );
@@ -158,7 +165,7 @@ using SisMEC.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c88d5d5e975180dc5bee5064d696616bad49a66f8644", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c88d5d5e975180dc5bee5064d696616bad49a66f8825", async() => {
                 WriteLiteral("Edit");
             }
             );
@@ -189,7 +196,7 @@ using SisMEC.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral(" |\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c88d5d5e975180dc5bee5064d696616bad49a66f10808", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c88d5d5e975180dc5bee5064d696616bad49a66f10989", async() => {
                 WriteLiteral("Details");
             }
             );
@@ -220,7 +227,7 @@ using SisMEC.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral(" |\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c88d5d5e975180dc5bee5064d696616bad49a66f12979", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c88d5d5e975180dc5bee5064d696616bad49a66f13160", async() => {
                 WriteLiteral("Delete");
             }
             );

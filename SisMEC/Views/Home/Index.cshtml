@@ -2,7 +2,98 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<link rel="stylesheet" href="~/css/custom.css" />
+
+<header>
+<div class="container">
+  <div class="row">
+    <div class="col bloco">
+        
+    </div>
+    <div class="col bloco">
+          <div class="centro meio">
+            <font face="Fira Sans Black"><h2 class="title">Bem-vindo ao SISMecânica!</h2></font>
+            <font face="Fira Sans Black"><p>
+              Estamos muito agradecidos por 
+              nos escolher.
+            </p></font>
+            </div>
+    </div>
+  </div>
+</header>
+<body>
+    <!--SOBRE-->
+    <!--//SOBRE-->
+    <!--DEPOIMENTOS-->
+    <div id="servicos">
+        <center>
+            <div class="container">
+                <div class="row"> 
+                    <div class="col-sm-4 col-md-4 col-lg-4 cartao">
+                            <img src="~/assets/vistoria_carro.svg" class="img-fluid" width="100" height="100" />
+                            <h5 class="text-uppercase mb-1">Cadastrar Carro</h5>
+                            <a class="button btn btn-outline-primary button-primary-outline d-md-inline-block d-block" asp-area="" asp-controller="Carros" asp-action="Index">Acessar</a>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 cartao">
+                            <img src="~/assets/cadastro_client.svg" class="img-fluid" width="100" height="100" />
+                            <h5 class="text-uppercase mb-1">Cadastrar Cliente</h5>
+                            <a href="#" class="button btn btn-outline-primary button-primary-outline d-md-inline-block d-block">Acessar</a>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 cartao">
+                            <img src="~/assets/carro_manutencao.svg" class="img-fluid" width="100" height="100" />
+                            <h5 class="text-uppercase mb-1">Cadastrar Serviços</h5>
+                            <a href="#" class="button btn btn-outline-primary button-primary-outline d-md-inline-block d-block">Acessar</a>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 cartao">
+                            <img src="~/assets/lista_automovel.svg" class="img-fluid" width="100" height="100" />
+                            <h5 class="text-uppercase mb-1">Análise Geral</h5>
+                            <a href="#" class="button btn btn-outline-primary button-primary-outline d-md-inline-block d-block">Acessar</a>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 cartao">
+                            <img src="~/assets/procurar_produto.svg" class="img-fluid" width="100" height="100" />
+                            <h5 class="text-uppercase mb-1">Cadastrar Produtos</h5>
+                            <a href="#" class="button btn btn-outline-primary button-primary-outline d-md-inline-block d-block">Acessar</a>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 cartao">
+                            <img src="~/assets/cadastro_client.svg" class="img-fluid" width="100" height="100" />
+                            <h5 class="text-uppercase mb-1">Sugestões</h5>
+                            <a href="#" class="button btn btn-outline-primary button-primary-outline d-md-inline-block d-block">Acessar</a>
+                    </div>
+                </div>
+            </div>
+        </center>
+    </div>
+
+    <!--FOOTER-->
+    <footer id="contato">
+      <div>
+        <div class="email">
+          <img src="~/assets/paperplane.svg" />
+          <h2 class="title text-center">Fique por dentro das novidades</h2>
+          <h4 class="subtitle text-center mb-4">
+            Inscreva-se para receber novidades em seu e-mail
+          </h4>
+          <form>
+            <div class="flex-md-grow-1 pr-md-3 pb-md-0 pb-3">
+              <label for="email" class="sr-only">Password</label>
+              <input
+                type="email"
+                class="form-control w-100"
+                id="email_input"
+                placeholder="seu email"/>
+            </div>
+            <div class="flex-grow-1 flex-md-grow-0">
+              <button type="submit" class="btn btn-light button mb-3 d-md-inline d-block w-100">Cadastre-se</button>
+            </div>
+          </form>
+        </div>
+        </div>
+</footer>
+
+</body>
+</html>
+
+
+

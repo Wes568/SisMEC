@@ -1,0 +1,64 @@
+﻿@model SisMEC.Models.Servico
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Servico</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ServicoDataEntrada" class="control-label"></label>
+                <input asp-for="ServicoDataEntrada" class="form-control" />
+                <span asp-validation-for="ServicoDataEntrada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicoDataSaida" class="control-label"></label>
+                <input asp-for="ServicoDataSaida" class="form-control" />
+                <span asp-validation-for="ServicoDataSaida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicoDescricao" class="control-label"></label>
+                <input asp-for="ServicoDescricao" class="form-control" />
+                <span asp-validation-for="ServicoDescricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicoValor" class="control-label"></label>
+                <input asp-for="ServicoValor" class="form-control" />
+                <span asp-validation-for="ServicoValor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicoPecas" class="control-label"></label>
+                <input asp-for="ServicoPecas" class="form-control" />
+                <span asp-validation-for="ServicoPecas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicoObs" class="control-label"></label>
+                <input asp-for="ServicoObs" class="form-control" />
+                <span asp-validation-for="ServicoObs" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ServicoCompleto" /> @Html.DisplayNameFor(model => model.ServicoCompleto)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClienteId" class="control-label"></label>
+                <select asp-for="ClienteId" class ="form-control" asp-items="ViewBag.ClienteId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

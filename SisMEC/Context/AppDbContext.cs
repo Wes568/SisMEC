@@ -15,7 +15,6 @@ namespace SisMEC.Context
         {
 
         }
-        public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Carro> Carros { get; set; }
         public DbSet<Servico> Servicos { get; set; }

@@ -1,0 +1,54 @@
+﻿@model SisMEC.Models.Cliente
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Cliente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ClienteNome" class="control-label"></label>
+                <input asp-for="ClienteNome" class="form-control" />
+                <span asp-validation-for="ClienteNome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClienteCPF" class="control-label"></label>
+                <input asp-for="ClienteCPF" class="form-control" />
+                <span asp-validation-for="ClienteCPF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClienteEmail" class="control-label"></label>
+                <input asp-for="ClienteEmail" class="form-control" />
+                <span asp-validation-for="ClienteEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClienteTelefone" class="control-label"></label>
+                <input asp-for="ClienteTelefone" class="form-control" />
+                <span asp-validation-for="ClienteTelefone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClienteEndereco" class="control-label"></label>
+                <input asp-for="ClienteEndereco" class="form-control" />
+                <span asp-validation-for="ClienteEndereco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarroId" class="control-label"></label>
+                <select asp-for="CarroId" class ="form-control" asp-items="ViewBag.CarroId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

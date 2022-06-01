@@ -1,0 +1,21 @@
+﻿
+
+body,
+html {
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: #1B1818;
+}
+
+.lista {
+    background-color: white;
+    padding:20px;
+    border-radius:8px;
+}
+
+td {
+    text-align: center;
+    justify-content: center;
+}

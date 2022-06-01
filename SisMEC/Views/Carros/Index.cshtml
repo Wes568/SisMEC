@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SisMEC.Models.Carro>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CarroMarca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarroModelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarroObs)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarroMarca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarroModelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarroObs)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CarroId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CarroId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CarroId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

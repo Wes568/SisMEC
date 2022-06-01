@@ -1,0 +1,85 @@
+﻿@model IEnumerable<SisMEC.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<link rel="stylesheet" href="~/css/clientes.css"/>
+
+<header>
+<div class="container">
+  <div class="row">
+    <div class="col bloco">
+        
+    </div>
+    <div class="col bloco">
+          <div class="centro meio">
+            <font face="Fira Sans Black"><h1 class="title">CLIENTES</h1></font>
+            </div>
+    </div>
+    </div>
+  </div>
+</header>
+
+<div class="lista">
+<p>
+    <a class="btn btn-primary" asp-action="Create" color="white">ADICIONAR</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteCPF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteTelefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteEndereco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carro)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteCPF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteTelefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteEndereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Carro.CarroMarca)
+            </td>
+            <td>
+               <a class="btn btn-secondary btn-sm" asp-action="Edit" asp-route-id="@item.ClienteId" color="white">EDITAR</a>
+                <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.ClienteId" color="white">DETALHES</a>
+                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.ClienteId" color="white">EXCLUIR</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+</html>

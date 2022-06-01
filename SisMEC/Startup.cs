@@ -37,7 +37,6 @@ namespace SisMEC
             .AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
 
-            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
             services.AddTransient<IServicoRepository, ServicoRepository>();
             services.AddTransient<IProdutoRepository, ProdutoRepository>();
             services.AddTransient<IClienteRepository, ClienteRepository>();
@@ -51,7 +50,7 @@ namespace SisMEC
 
             services.AddControllersWithViews();
         }
-        
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -80,7 +79,11 @@ namespace SisMEC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Account}/{action=Login}/{id?}");
+
+                endpoints.MapControllerRoute(
+                    name: "areas",
+                    pattern: "{area:exists}/{controller=Admin}/{action=Index}/{id?}");
             });
         }
     }

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SisMEC.Models.Caixa>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraAbriu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraFechou)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Saldo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraAbriu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraFechou)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Saldo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CaixaId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CaixaId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CaixaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

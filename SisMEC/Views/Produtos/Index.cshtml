@@ -4,50 +4,103 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<link rel="stylesheet" href="~/css/produtos.css" />
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ProdutoNome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProdutoQuantidade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProdutoValor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProdutoDataValidade)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProdutoNome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProdutoQuantidade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProdutoValor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProdutoDataValidade)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProdutoId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProdutoId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProdutoId">Delete</a>
-            </td>
-        </tr>
+@section scripts{
+    <script>
+        $(".delete").click(function () {
+            var id = $(this).attr("data-id");
+            $("#modal").load("Delete?id=" + id, function () {
+                $("#modal").modal();
+            })
+        });
+
+        $(".edit").click(function () {
+            var id = $(this).attr("data-id");
+            $("#modal").load("Edit?id=" + id, function () {
+                $("#modal").modal();
+            })
+        });
+
+        $(".details").click(function () {
+            var id = $(this).attr("data-id");
+            $("#modal").load("Details?id=" + id, function () {
+                $("#modal").modal();
+            })
+        });
+
+        $(".create").click(function () {
+            $("#modal").load("Create", function () {
+                $("#modal").modal();
+            })
+        });
+    </script>
 }
-    </tbody>
-</table>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col bloco">
+
+                </div>
+                <div class="col bloco">
+                    <div class="centro meio">
+                        <font face="Fira Sans Black"><h1 class="title">PRODUTOS</h1></font>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="lista">
+        <p>
+            <a class="btn btn-primary create" asp-action="Create" color="white" data-toggle="modal" data-target="#modal">ADICIONAR</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProdutoNome)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProdutoQuantidade)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProdutoValor)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProdutoDataValidade)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProdutoNome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProdutoQuantidade)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProdutoValor)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProdutoDataValidade)
+                        </td>
+                        <td>
+                            <a class="btn btn-secondary btn-sm edit" asp-action="Edit" asp-route-id="@item.ProdutoId" color="white" data-id="@item.ProdutoId" data-toggle="modal" data-target="#modal">EDITAR</a>
+                            <a class="btn btn-info btn-sm details" asp-action="Details" asp-route-id="@item.ProdutoId" color="white" data-id="@item.ProdutoId" data-toggle="modal" data-target="#modal">DETALHES</a>
+                            <a class="btn btn-danger btn-sm delete" asp-action="Delete" asp-route-id="@item.ProdutoId" data-id="@item.ProdutoId" color="white" data-toggle="modal" data-target="#modal">X</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+
+<div id="modal" class="modal fade" />

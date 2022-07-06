@@ -175,5 +175,8 @@ C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\obj\Debug\net5.0\Razor\Views\C
 C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\obj\Debug\net5.0\Razor\Views\Caixas\Details.cshtml.g.cs
 C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\obj\Debug\net5.0\Razor\Views\Caixas\Edit.cshtml.g.cs
 C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\obj\Debug\net5.0\Razor\Views\Caixas\Index.cshtml.g.cs
-C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\obj\Debug\net5.0\refint\SisMEC.dll
 C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\obj\Debug\net5.0\Razor\Views\Contatos\Index.cshtml.g.cs
+C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\bin\Debug\net5.0\Google.DataTable.Net.Wrapper.dll
+C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\obj\Debug\net5.0\refint\SisMEC.dll
+C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\obj\Debug\net5.0\Razor\Views\Grafico\Index.cshtml.g.cs
+C:\Users\Eprofessional\source\repos\SisMEC\SisMEC\obj\Debug\net5.0\Razor\Views\Contatos\Index2.cshtml.g.cs

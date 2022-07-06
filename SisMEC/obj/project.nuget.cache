@@ -1,11 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "tQSD6ipG3BaHF+mJVtatBK1exQGImRVkMborxUcygOjCTAErj8CnR3P0RZU48kTdKDKxiO9h9r/UJcZei1o3iA==",
+  "dgSpecHash": "ubgTOCIQuevR1CKDCze+b3R2z61SXdhvOPnNPXRy2P+DKncm4DtEzfSqU2fVFltyEl62Ja1Q/rr5Q18oYHzWJw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Eprofessional\\source\\repos\\SisMEC\\SisMEC\\SisMEC.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Eprofessional\\.nuget\\packages\\bootstrap\\3.1.1\\bootstrap.3.1.1.nupkg.sha512",
+    "C:\\Users\\Eprofessional\\.nuget\\packages\\glyphicon\\1.0.1\\glyphicon.1.0.1.nupkg.sha512",
+    "C:\\Users\\Eprofessional\\.nuget\\packages\\glyphicon.htmlhelper\\1.0.3\\glyphicon.htmlhelper.1.0.3.nupkg.sha512",
+    "C:\\Users\\Eprofessional\\.nuget\\packages\\google.datatable.net.wrapper\\4.1.0\\google.datatable.net.wrapper.4.1.0.nupkg.sha512",
+    "C:\\Users\\Eprofessional\\.nuget\\packages\\helpermethods.htmlhelper\\1.0.0\\helpermethods.htmlhelper.1.0.0.nupkg.sha512",
     "C:\\Users\\Eprofessional\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
-    "C:\\Users\\Eprofessional\\.nuget\\packages\\jquery\\1.7.0\\jquery.1.7.0.nupkg.sha512",
+    "C:\\Users\\Eprofessional\\.nuget\\packages\\jquery\\1.9.0\\jquery.1.9.0.nupkg.sha512",
     "C:\\Users\\Eprofessional\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.16\\microsoft.aspnetcore.cryptography.internal.5.0.16.nupkg.sha512",
     "C:\\Users\\Eprofessional\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.16\\microsoft.aspnetcore.cryptography.keyderivation.5.0.16.nupkg.sha512",
     "C:\\Users\\Eprofessional\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
@@ -136,5 +141,16 @@
     "C:\\Users\\Eprofessional\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Eprofessional\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1602",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Glyphicon.HTMLHelper 1.0.3 não fornece nenhum limite inferior inclusivo para a dependência HelperMethods.HTMLHelper. A melhor correspondência aproximada HelperMethods.HTMLHelper 1.0.0 foi resolvida.",
+      "libraryId": "HelperMethods.HTMLHelper",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

@@ -4,38 +4,51 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+@{
+    Layout = null;
+}
 
-<h4>Carro</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="CarroId" />
-            <div class="form-group">
-                <label asp-for="CarroMarca" class="control-label"></label>
-                <input asp-for="CarroMarca" class="form-control" />
-                <span asp-validation-for="CarroMarca" class="text-danger"></span>
+<div class="modal-dialog">
+    <div class="modal-content">
+        @using (Html.BeginForm())
+        {
+            <div class="modal-header">
+                <h4 class="modal-title">Editar</h4>
             </div>
-            <div class="form-group">
-                <label asp-for="CarroModelo" class="control-label"></label>
-                <input asp-for="CarroModelo" class="form-control" />
-                <span asp-validation-for="CarroModelo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CarroObs" class="control-label"></label>
-                <input asp-for="CarroObs" class="form-control" />
-                <span asp-validation-for="CarroObs" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+            @Html.AntiForgeryToken()
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="CarroId" />
+                <div class="modal-body">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="CarroMarca" class="control-label"></label></th>
+                                <td><input asp-for="CarroMarca" class="form-control" /></td>
+                                <td><span asp-validation-for="CarroMarca" class="text-danger"></span></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="CarroModelo" class="control-label"></label></th>
+                                <td><input asp-for="CarroModelo" class="form-control" /></td>
+                                <td> <span asp-validation-for="CarroModelo" class="text-danger"></span></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th scope="row"><label asp-for="CarroObs" class="control-label"></label></th>
+                                <td><input asp-for="CarroObs" class="form-control" /></td>
+                                <td><span asp-validation-for="CarroObs" class="text-danger"></span></td>
+                            </tr>
 
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                        <a class="btn btn-primary" asp-action="Index">Voltar</a>
+                    </div>
+                </div>
+            </form>
+        }
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

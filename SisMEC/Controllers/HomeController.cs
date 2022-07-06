@@ -28,6 +28,17 @@ namespace SisMEC.Controllers
             return View();
         }
 
+        //public string ServicosGraficos()
+        //{
+        //    var itens = _logger.ObterNumeroLivrosPorEditora();
+        //    var json = itens.ToGoogleDataTable()
+        //        .NewColumn(new Column(ColumnType.String, "Editora"), x => x.NomeEditora)
+        //        .NewColumn(new Column(ColumnType.Number, "Quantidade"), x => x.CountLivros)
+        //        .Build()
+        //        .GetJson();
+        //    return json;
+        //}
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

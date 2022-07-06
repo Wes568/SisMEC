@@ -48,7 +48,7 @@ namespace SisMEC.Models
         public bool ServicoCompleto { get; set; }
 
         public int ClienteId { get; set; }
-        public virtual Cliente Cliente { get; set; }
+        public Cliente Cliente { get; set; }
 
     }
 }

@@ -1,0 +1,53 @@
+﻿
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+
+<div class="container">
+    <center style="margin-top:30px;">
+    <div id="chart_div" style="width: 900px; height: 500px; border-radius:10px;"></div>
+    <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Index">VOLTAR</a>
+    <br />
+    </center>
+</div>
+
+
+<script type="text/javascript">
+            google.charts.load ('current', {'packages': ['corechart']});
+            google.charts.setOnLoadCallback(CarregaDados);
+
+            function CarregaDados(){
+                $.ajax({
+                    url: '@Url.Action("GrafServicos", "Grafico")',
+                    dataType: "json",
+                    type: "GET",
+                    error: function(xhr, status, error) {
+                        var err = eval("(" + xhr.responseText + ")");
+                        toastr.error(err.message);
+                    },
+                    success: function(data){
+                        GraficoServicos(data);
+                    }
+                });
+                return false;
+            }
+
+        function GraficoServicos(data){
+            var dataArray =[
+                ['Tipo de Servico', 'Quantidade']
+                ,['Incompleto',data.servicoPendente],['Completo', data.servicoCompleto]
+            ];
+                console.log(data);
+
+        var data = google.visualization.arrayToDataTable(dataArray);
+
+        var options = {
+            title: 'Relãção de Serviços'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+
+</script>

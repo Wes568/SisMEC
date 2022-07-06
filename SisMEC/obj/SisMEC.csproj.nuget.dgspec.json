@@ -44,6 +44,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Glyphicon.HTMLHelper": {
+              "target": "Package",
+              "version": "[1.0.3, )"
+            },
+            "Google.DataTable.Net.Wrapper": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.16, )"
@@ -73,6 +81,10 @@
             "OwlCarousel": {
               "target": "Package",
               "version": "[1.3.3, )"
+            },
+            "glyphicon": {
+              "target": "Package",
+              "version": "[1.0.1, )"
             }
           },
           "imports": [

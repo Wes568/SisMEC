@@ -4,51 +4,53 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+@{
+    Layout = null;
+}
 
-<div>
-    <h4>Cliente</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClienteNome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClienteNome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClienteCPF)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClienteCPF)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClienteEmail)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClienteEmail)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClienteTelefone)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClienteTelefone)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClienteEndereco)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClienteEndereco)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Carro)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Carro.CarroMarca)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.ClienteId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Detalhes do Cliente</h4>
+        </div>
+        <div class="modal-body">
+            <table class="table table-borderless">
+                <tbody>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.ClienteNome)</th>
+                        <td>@Html.DisplayFor(model => model.ClienteNome)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.ClienteCPF)</th>
+                        <td> @Html.DisplayFor(model => model.ClienteCPF)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.ClienteEmail)</th>
+                        <td> @Html.DisplayFor(model => model.ClienteEmail)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.ClienteTelefone)</th>
+                        <td> @Html.DisplayFor(model => model.ClienteTelefone)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row"> @Html.DisplayNameFor(model => model.ClienteEndereco)</th>
+                        <td>@Html.DisplayFor(model => model.ClienteEndereco)</td>
+                    </tr>
+                    <tr class="form-group">
+                        <th scope="row">@Html.DisplayNameFor(model => model.Carro)</th>
+                        <td>@Html.DisplayFor(model => model.Carro.CarroMarca)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <a class="btn btn-primary" asp-action="Index">Voltar</a>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+<script>
+    function tirar() {
+        $(".modal-backdrop").remove();
+    }
+</script>

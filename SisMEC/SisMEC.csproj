@@ -5,12 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\js\chart\**" />
     <Compile Remove="wwwroot\NovaPasta1\**" />
     <Compile Remove="wwwroot\NovaPasta\**" />
+    <Content Remove="wwwroot\js\chart\**" />
     <Content Remove="wwwroot\NovaPasta1\**" />
     <Content Remove="wwwroot\NovaPasta\**" />
+    <EmbeddedResource Remove="wwwroot\js\chart\**" />
     <EmbeddedResource Remove="wwwroot\NovaPasta1\**" />
     <EmbeddedResource Remove="wwwroot\NovaPasta\**" />
+    <None Remove="wwwroot\js\chart\**" />
     <None Remove="wwwroot\NovaPasta1\**" />
     <None Remove="wwwroot\NovaPasta\**" />
   </ItemGroup>
@@ -45,6 +49,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="glyphicon" Version="1.0.1" />
+    <PackageReference Include="Glyphicon.HTMLHelper" Version="1.0.3" />
+    <PackageReference Include="Google.DataTable.Net.Wrapper" Version="4.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.16" />
     <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.16" />

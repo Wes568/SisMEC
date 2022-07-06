@@ -38,7 +38,7 @@ namespace SisMEC.Models
         [Display(Name = "Endereço")]
         public string ClienteEndereco { get; set; }
         public int CarroId { get; set; }
-        public virtual Carro Carro { get; set; }
+        public Carro Carro { get; set; }
 
         public List<Carro> ClienteCarros { get; set; }
     }

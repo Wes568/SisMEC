@@ -15,6 +15,7 @@ using SisMEC.Repositories.Interfaces;
 using SisMEC.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Http;
+using SisMEC.Controllers.Services;
 
 namespace SisMEC
 {
@@ -42,6 +43,8 @@ namespace SisMEC
             services.AddTransient<IClienteRepository, ClienteRepository>();
             services.AddTransient<ICarroRepository, CarroRepository>();
             services.AddTransient<ICaixaRepository, CaixaRepository>();
+
+            services.AddScoped<GraficoServicosService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 

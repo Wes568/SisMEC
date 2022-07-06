@@ -4,74 +4,228 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ServicoDataEntrada)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServicoDataSaida)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServicoDescricao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServicoValor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServicoPecas)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServicoObs)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServicoCompleto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cliente)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ServicoDataEntrada)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ServicoDataSaida)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ServicoDescricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ServicoValor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ServicoPecas)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ServicoObs)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ServicoCompleto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cliente.ClienteCPF)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ServicoId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ServicoId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ServicoId">Delete</a>
-            </td>
-        </tr>
+<head>
+    <link rel="stylesheet" href="~/css/servicos.css" />
+</head>
+
+<!--<button data-toggle="modal" data-target="#teste"></button>-->
+
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col bloco">
+                </div>
+                <div class="col bloco">
+                    <div class="centro meio">
+                        <font face="Fira Sans Black"><h1 class="title">SERVIÇOS</h1></font>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="lista">
+        <p>
+            <a class="btn btn-primary create" asp-action="Create" color="white" data-toggle="modal" data-target="#modal">ADICIONAR</a>
+        </p>
+        <div>
+            <center>
+                <table>
+                    <tr>
+                        <td style="color:goldenrod">PENDENTE</td>
+                        <td style="color:forestgreen">FINALIZADO</td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+        <div class="form-group col-md-12">
+            <div class="tabbable">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a data-toggle="tab" class="nav-link active" aria-current="page" href="#cartao">CARTÕES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="tab" class="nav-link" href="#lista">LISTA</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div id="cartao" class="tab-pane fade show active ">
+                        <div class="row" align="center">
+                            @foreach (var servico in Model)
+                            {
+                                @if (servico.ServicoCompleto)
+                                {
+                                    <div style="background-color:forestgreen;border-radius:8px;padding:20px;margin:10px auto auto auto; border:2px solid white;" class="col-sm-4 col-md-4 col-lg-4">
+                                        <h4>@servico.Cliente.ClienteNome</h4>
+                                        <h4>@servico.ServicoDescricao</h4>
+                                        <a class="btn btn-secondary btn-sm edit" asp-action="Edit" asp-route-id="@servico.ServicoId" color="white" data-id="@servico.ServicoId" data-toggle="modal" data-target="#modal">EDITAR</a>
+                                        <a class="btn btn-info btn-sm details" asp-action="Details" asp-route-id="@servico.ServicoId" color="white" data-id="@servico.ServicoId" data-toggle="modal" data-target="#modal">DETALHES</a>
+                                        <a class="btn btn-danger btn-sm delete" asp-action="Delete" asp-route-id="@servico.ServicoId" data-id="@servico.ServicoId" color="white" data-toggle="modal" data-target="#modal">X</a>
+                                    </div>
+
+
+                                }
+                                else
+                                {
+                                    <div style="background-color:goldenrod;border-radius:8px;padding:20px;margin:10px auto auto auto; border:2px solid white;" class="col-sm-4 col-md-4 col-lg-4">
+                                        <h4>@servico.Cliente.ClienteNome</h4>
+                                        <h4>@servico.Cliente.Carro</h4>
+                                        <h4>@servico.ServicoDescricao</h4>
+                                        <a class="btn btn-secondary btn-sm edit" asp-action="Edit" asp-route-id="@servico.ServicoId" color="white" data-id="@servico.ServicoId" data-toggle="modal" data-target="#modal">EDITAR</a>
+                                        <a class="btn btn-info btn-sm details" asp-action="Details" asp-route-id="@servico.ServicoId" color="white" data-id="@servico.ServicoId" data-toggle="modal" data-target="#modal">DETALHES</a>
+                                        <a class="btn btn-danger btn-sm delete" asp-action="Delete" asp-route-id="@servico.ServicoId" data-id="@servico.ServicoId" color="white" data-toggle="modal" data-target="#modal">X</a>
+                                    </div>
+                                }
+
+                            }
+                        </div>
+                    </div>
+                    <div id="lista" class="tab-pane fade">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ServicoDataEntrada)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ServicoDataSaida)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ServicoDescricao)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ServicoValor)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ServicoPecas)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ServicoCompleto)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Cliente)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                    @if (item.ServicoCompleto)
+                                    {
+                                        <tr style="background-color:forestgreen;">
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ServicoDataEntrada)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ServicoDataSaida)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ServicoDescricao)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ServicoValor)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ServicoPecas)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ServicoCompleto)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Cliente.ClienteNome)
+                                            </td>
+
+                                            <td>
+                                                <a class="btn btn-secondary btn-sm edit" asp-action="Edit" asp-route-id="@item.ServicoId" color="white" data-id="@item.ServicoId" data-toggle="modal" data-target="#modal">EDITAR</a>
+                                                <a class="btn btn-info btn-sm details" asp-action="Details" asp-route-id="@item.ServicoId" color="white" data-id="@item.ServicoId" data-toggle="modal" data-target="#modal">DETALHES</a>
+                                                <a class="btn btn-danger btn-sm delete" asp-action="Delete" asp-route-id="@item.ServicoId" data-id="@item.ServicoId" color="white" data-toggle="modal" data-target="#modal">X</a>
+                                            </td>
+                                        </tr>
+
+                                       
+                                    }
+                                    else
+                                    {
+                                        <tr style="background-color:goldenrod;">
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ServicoDataEntrada)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ServicoDataSaida)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ServicoDescricao)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ServicoValor)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ServicoPecas)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ServicoCompleto)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Cliente.ClienteNome)
+                                            </td>
+
+                                            <td>
+                                                <a class="btn btn-secondary btn-sm edit" asp-action="Edit" asp-route-id="@item.ServicoId" color="white" data-id="@item.ServicoId" data-toggle="modal" data-target="#modal">EDITAR</a>
+                                                <a class="btn btn-info btn-sm details" asp-action="Details" asp-route-id="@item.ServicoId" color="white" data-id="@item.ServicoId" data-toggle="modal" data-target="#modal">DETALHES</a>
+                                                <a class="btn btn-danger btn-sm delete" asp-action="Delete" asp-route-id="@item.ServicoId" data-id="@item.ServicoId" color="white" data-toggle="modal" data-target="#modal">X</a>
+                                            </td>
+                                        </tr>
+
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<div id="modal" class="modal fade"/>
+
+@section scripts{
+    <script>
+        $(function () {
+
+            $(".create").click(function () {
+                $("#modal").load("Create", function () {
+                    $("#modal").modal();
+                })
+            });
+
+            $(".delete").click(function () {
+                var id = $(this).attr("data-id");
+                $("#modal").load("Delete?id=" + id, function () {
+                    $("#modal").modal();
+                })
+            });
+
+            $(".edit").click(function () {
+                var id = $(this).attr("data-id");
+                $("#modal").load("Edit?id=" + id, function () {
+                    $("#modal").modal();
+                })
+            });
+
+            $(".details").click(function () {
+                var id = $(this).attr("data-id");
+                $("#modal").load("Details?id=" + id, function () {
+                    $("#modal").modal();
+                })
+            });
+
+        })
+
+    </script>
 }
-    </tbody>
-</table>

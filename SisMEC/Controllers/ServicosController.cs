@@ -48,7 +48,7 @@ namespace SisMEC.Controllers
         // GET: Servicos/Create
         public IActionResult Create()
         {
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "ClienteId", "ClienteCPF");
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "ClienteId", "ClienteNome");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace SisMEC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "ClienteId", "ClienteCPF", servico.ClienteId);
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "ClienteId", "ClienteNome", servico.ClienteId);
             return View(servico);
         }
 
@@ -82,7 +82,7 @@ namespace SisMEC.Controllers
             {
                 return NotFound();
             }
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "ClienteId", "ClienteCPF", servico.ClienteId);
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "ClienteId", "ClienteNome", servico.ClienteId);
             return View(servico);
         }
 
@@ -118,7 +118,7 @@ namespace SisMEC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "ClienteId", "ClienteCPF", servico.ClienteId);
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "ClienteId", "ClienteNome", servico.ClienteId);
             return View(servico);
         }
 
@@ -156,5 +156,6 @@ namespace SisMEC.Controllers
         {
             return _context.Servicos.Any(e => e.ServicoId == id);
         }
+
     }
 }
